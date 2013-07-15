@@ -1,27 +1,39 @@
 source 'https://rubygems.org'
 
-gem 'rails'
+gem 'rails', '3.2.13'
 
 gem 'sqlite3'
 #gem 'mysql2'
 
+#gem 'jquery-rails'
+
 gem 'haml'
 
-#gem 'jquery-rails'
+# Gem for handling exception notifications
+gem 'exception_notification'
 
 # Needs to be outside of assets group because it’s needed in production
 # Use a patched version with an updated r.js file
-gem 'requirejs-rails', '0.9.0', :path => "vendor/gems/requirejs-rails-0.9.0"
+gem 'requirejs-rails', '0.9.1',:git => 'git://github.com/jwhitley/requirejs-rails.git'
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails'
-  gem 'coffee-rails'
+  gem 'sass-rails',   '~> 3.2.3'
+  gem 'coffee-rails', '~> 3.2.1'
+  gem 'compass-rails'
+  gem 'compass-recipes'
+  gem 'haml-rails'
   #gem 'compass-rails'
-  gem 'haml_coffee_assets'
-  gem 'uglifier'
+  gem 'uglifier', '>= 1.0.3'
+  gem 'handlebars_assets'
 end
+
+gem 'jquery-rails'
+gem 'backbone-on-rails'
+gem 'thin'
+gem 'handlebars_assets'
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

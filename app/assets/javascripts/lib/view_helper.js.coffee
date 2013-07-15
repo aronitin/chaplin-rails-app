@@ -1,16 +1,9 @@
 define [
   'chaplin'
   'lib/utils'
-], (Handlebars, Chaplin, utils) ->
+], (Chaplin, utils) ->
   'use strict'
-
-  # View helpers (HAML Coffee in this case)
-  # ---------------------------------------
-
-  HAML.globals = ->
-    {
-      #someProperty: 'foo'
-      #someMethod: ->
-    }
-
-  null
+  # Application-specific Handlebars helpers
+  # returns if a goal is complete or not
+  Handlebars.registerHelper "getPath", (asset) ->
+   return window.image_path(asset)
